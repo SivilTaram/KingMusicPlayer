@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/music_player_progress_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/player_mini_process_bar_height"
+        android:background="@color/music_player_progress_bar_color"></ProgressBar>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/player_mini"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_of_miniplayer"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/photo_of_album"
+            android:layout_width="@dimen/player_mini_height"
+            android:layout_height="@dimen/player_mini_height" />
+
+        <LinearLayout
+            android:id="@+id/info_of_song"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name_of_song_and_artist"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/name_of_album"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/play_or_pause"
+            android:layout_width="@dimen/player_mini_height"
+            android:layout_height="@dimen/player_mini_height"
+            android:background="@drawable/play_icon" />
+
+        <ImageButton
+            android:id="@+id/next_song"
+            android:layout_width="@dimen/player_mini_height"
+            android:layout_height="@dimen/player_mini_height"
+            android:background="@drawable/next_icon" />
+
+    </LinearLayout>
+</LinearLayout>
