@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="player_mini_height">70px</dimen>
-    <dimen name="player_mini_process_bar_height">5px</dimen>
+    <dimen name="player_mini_height">50dp</dimen>
+    <dimen name="player_mini_process_bar_height">3dp</dimen>
 </resources>

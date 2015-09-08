@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
@@ -22,15 +23,15 @@ public class MainClass extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        mp = MediaPlayer.create(this, R.raw.test_music);
+        player_mini = new Player_mini(mp);
         lv = (ListView) findViewById(R.id.song_list);
+        player_mini.setPb((ProgressBar)findViewById(R.id.music_player_progress_bar));
         player_mini.setPhoto_button((ImageButton) findViewById(R.id.photo_of_album));
         player_mini.setPlay_and_pause_button((ImageButton) findViewById(R.id.play_or_pause));
         player_mini.setNext_song_button((ImageButton) findViewById(R.id.next_song));
         player_mini.setName_of_song_and_artist((TextView) findViewById(R.id.name_of_song_and_artist));
         player_mini.setName_of_album((TextView) findViewById(R.id.name_of_album));
-        mp = MediaPlayer.create(this, R.raw.test_music);
-        player_mini = new Player_mini(mp);
-
         player_mini.setOnClickListeners();
     }
 }

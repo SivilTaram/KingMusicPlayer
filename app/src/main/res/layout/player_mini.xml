@@ -8,7 +8,12 @@
         android:id="@+id/music_player_progress_bar"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/player_mini_process_bar_height"
-        android:background="@color/music_player_progress_bar_color"></ProgressBar>
+        android:maxHeight="@dimen/player_mini_process_bar_height"
+        android:minHeight="@dimen/player_mini_process_bar_height"
+        android:background="@color/music_player_progress_bar_color"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        android:progress="0"/>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/player_mini"

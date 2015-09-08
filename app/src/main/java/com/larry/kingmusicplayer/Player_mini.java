@@ -1,6 +1,7 @@
 package com.larry.kingmusicplayer;
 
 import android.media.MediaPlayer;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -35,11 +36,39 @@ public class Player_mini {
                 } else {
                     v.setBackgroundResource(R.drawable.pause_icon);
                     mp.start();
+                    new pbThread().start();
                 }
             }
         });
-        next_song_button.setOnClickListener(null);
+        next_song_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playNextSong();
+            }
+        });
     }
+
+    class pbThread extends Thread{
+        @Override
+        public void run() {
+            long pos=0L;
+            while (mp!=null){
+                pos=mp.getCurrentPosition();
+                Log.i("tag", "Thread is running!" + pos + "/" + mp.getDuration());
+                pb.setProgress((int)(pos*100/mp.getDuration()));
+                try {
+                    sleep(500);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void playNextSong(){
+
+    }
+
 
     public ProgressBar getPb() {
         return pb;
